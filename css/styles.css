@@ -1,0 +1,349 @@
+/* Skip Link for Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Focus styles for accessibility */
+.control-group select:focus,
+.control-group input:focus,
+.control-group button:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .control-group button {
+        border: 2px solid;
+    }
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.app-layout {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.canvas-container {
+    flex: 2;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+#bear-canvas {
+    width: 100%;
+    height: 600px;
+    display: block;
+}
+
+.customization-panel {
+    flex: 1;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.customization-panel h2 {
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+}
+
+.panel-content {
+    /* Remove placeholder styling */
+}
+
+.control-group {
+    margin-bottom: 15px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.control-group select,
+.control-group input[type="range"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background: white;
+}
+
+.control-group select:focus,
+.control-group input[type="range"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+}
+
+.control-group input[type="range"] {
+    -webkit-appearance: none;
+    height: 6px;
+    background: #ddd;
+    outline: none;
+    border-radius: 3px;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+}
+
+.control-group input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    border: none;
+}
+
+.control-group span {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: bold;
+    color: #667eea;
+    min-width: 30px;
+}
+
+.control-group button {
+    width: 100%;
+    padding: 10px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.control-group button:hover {
+    background: #5a67d8;
+}
+
+.control-group button:active {
+    background: #4c51bf;
+}
+
+.animation-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.animation-buttons button {
+    flex: 1;
+    min-width: 60px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+}
+
+.play-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.play-buttons button {
+    flex: 1;
+    min-width: 70px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    background: #48BB78;
+    color: white;
+}
+
+.play-buttons button:hover {
+    background: #38A169;
+}
+
+.play-buttons button:active {
+    background: #2F855A;
+}
+
+.save-load-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.save-load-buttons button {
+    flex: 1;
+    min-width: 80px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    background: #3182CE;
+    color: white;
+}
+
+.save-load-buttons button:hover {
+    background: #2C5282;
+}
+
+.save-load-buttons button:active {
+    background: #1A365D;
+}
+
+.preset-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.preset-buttons button {
+    flex: 1;
+    min-width: 70px;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    background: #9F7AEA;
+    color: white;
+}
+
+.preset-buttons button:hover {
+    background: #805AD5;
+}
+
+.preset-buttons button:active {
+    background: #6B46C1;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    opacity: 0.8;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .app-layout {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .canvas-container,
+    .customization-panel {
+        flex: none;
+        width: 100%;
+    }
+
+    #bear-canvas {
+        height: 300px;
+    }
+
+    .customization-panel {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .control-group {
+        margin-bottom: 12px;
+    }
+
+    .animation-buttons,
+    .play-buttons,
+    .save-load-buttons,
+    .preset-buttons {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .animation-buttons button,
+    .play-buttons button,
+    .save-load-buttons button,
+    .preset-buttons button {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #bear-canvas {
+        height: 250px;
+    }
+
+    .customization-panel {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .control-group label {
+        font-size: 0.85rem;
+    }
+
+    .control-group select,
+    .control-group input,
+    .control-group button {
+        font-size: 0.85rem;
+    }
+}

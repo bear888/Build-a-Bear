@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build-a-Bear</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <header>
+            <h1>Build-a-Bear</h1>
+            <p>Create your own custom 3D bear!</p>
+        </header>
+
+        <main id="main-content">
+            <div class="app-layout">
+                <!-- 3D Canvas Area -->
+                <div class="canvas-container">
+                    <canvas id="bear-canvas" aria-label="3D bear preview" role="img"></canvas>
+                </div>
+
+                <!-- Customization Panel -->
+                <div class="customization-panel">
+                    <h2>Customize Your Bear</h2>
+                    <div class="panel-content">
+                        <!-- Fur Color -->
+                        <div class="control-group">
+                            <label for="fur-color">Fur Color:</label>
+                            <select id="fur-color" aria-label="Choose fur color for your bear">
+                                <option value="#8B4513">Brown</option>
+                                <option value="#FFFFFF">White</option>
+                                <option value="#000000">Black</option>
+                                <option value="#FFD700">Gold</option>
+                                <option value="#FF69B4">Pink</option>
+                                <option value="#4169E1">Blue</option>
+                            </select>
+                        </div>
+
+                        <!-- Body Size -->
+                        <div class="control-group">
+                            <label for="body-size">Body Size:</label>
+                            <input type="range" id="body-size" min="0.5" max="1.5" step="0.1" value="1.0">
+                            <span id="body-size-value">1.0</span>
+                        </div>
+
+                        <!-- Head Size -->
+                        <div class="control-group">
+                            <label for="head-size">Head Size:</label>
+                            <input type="range" id="head-size" min="0.5" max="1.5" step="0.1" value="1.0">
+                            <span id="head-size-value">1.0</span>
+                        </div>
+
+                        <!-- Hair Style -->
+                        <div class="control-group">
+                            <label for="hair-style">Hair Style:</label>
+                            <select id="hair-style">
+                                <option value="none">None</option>
+                                <option value="spiky">Spiky</option>
+                                <option value="curly">Curly</option>
+                                <option value="long">Long</option>
+                            </select>
+                        </div>
+
+                        <!-- Eye Style -->
+                        <div class="control-group">
+                            <label for="eye-style">Eye Style:</label>
+                            <select id="eye-style">
+                                <option value="round">Round</option>
+                                <option value="big">Big</option>
+                                <option value="small">Small</option>
+                                <option value="sleepy">Sleepy</option>
+                            </select>
+                        </div>
+
+                        <!-- Arm Length -->
+                        <div class="control-group">
+                            <label for="arm-length">Arm Length:</label>
+                            <input type="range" id="arm-length" min="0.5" max="1.5" step="0.1" value="1.0">
+                            <span id="arm-length-value">1.0</span>
+                        </div>
+
+                        <!-- Leg Length -->
+                        <div class="control-group">
+                            <label for="leg-length">Leg Length:</label>
+                            <input type="range" id="leg-length" min="0.5" max="1.5" step="0.1" value="1.0">
+                            <span id="leg-length-value">1.0</span>
+                        </div>
+
+                        <!-- Reset Button -->
+                        <div class="control-group">
+                            <button id="reset-bear">Reset to Default</button>
+                        </div>
+
+                        <!-- Animation Controls -->
+                        <div class="control-group">
+                            <label>Animations:</label>
+                            <div class="animation-buttons">
+                                <button id="wave-animation">Wave</button>
+                                <button id="dance-animation">Dance</button>
+                                <button id="idle-animation">Idle</button>
+                            </div>
+                        </div>
+
+                        <!-- Environment Controls -->
+                        <div class="control-group">
+                            <label for="background">Background:</label>
+                            <select id="background">
+                                <option value="#f0f0f0">Default</option>
+                                <option value="#87CEEB">Sky Blue</option>
+                                <option value="#98FB98">Mint Green</option>
+                                <option value="#DDA0DD">Plum</option>
+                                <option value="#F0E68C">Khaki</option>
+                            </select>
+                        </div>
+
+                        <!-- Play Features -->
+                        <div class="control-group">
+                            <label>Play:</label>
+                            <div class="play-buttons">
+                                <button id="pet-bear">Pet Bear</button>
+                                <button id="surprise-bear">Surprise!</button>
+                            </div>
+                        </div>
+
+                        <!-- Save/Load Features -->
+                        <div class="control-group">
+                            <label>Save & Load:</label>
+                            <div class="save-load-buttons">
+                                <button id="save-bear">Save Bear</button>
+                                <button id="load-bear">Load Bear</button>
+                            </div>
+                        </div>
+
+                        <!-- Preset Bears -->
+                        <div class="control-group">
+                            <label>Preset Bears:</label>
+                            <div class="preset-buttons">
+                                <button id="preset-teddy">Teddy</button>
+                                <button id="preset-panda">Panda</button>
+                                <button id="preset-unicorn">Unicorn</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Build-a-Bear. Made with Three.js</p>
+        </footer>
+    </div>
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/exporters/GLTFExporter.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+    <!-- Main JavaScript -->
+    <script src="js/Bear.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
